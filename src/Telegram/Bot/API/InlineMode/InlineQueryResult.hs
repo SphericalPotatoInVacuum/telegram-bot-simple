@@ -18,6 +18,8 @@ data InlineQueryResult = InlineQueryResult
   , inlineQueryResultId :: InlineQueryResultId -- ^ Unique identifier for this result, 1-64 Bytes
   , inlineQueryResultTitle :: Maybe Text -- ^ Title of the result (only valid for "Article", "Photo", "Gif", "Mpeg4Gif", "Video", "Audio", "Voice", "Document", "Location", "Venue", "CachedPhoto", "CachedGif", "CachedMpeg4Gif", "CachedDocument", "CachedVideo", "CachedVoice" types of results)
   , inlineQueryResultInputMessageContent :: Maybe InputMessageContent
+  , inlineQueryResultPhotoURL :: Maybe Text
+  , inlineQueryResultThumbURL :: Maybe Text
   , inlineQueryResultContact  :: Maybe Contact
   } deriving (Generic, Show)
 
