@@ -81,6 +81,11 @@ callbackQueryDataRead = mkParser $ \update -> do
   data_ <- callbackQueryData query
   readMaybe (Text.unpack data_)
 
+inlineQuery :: UpdateParser InlineQuery
+inlineQuery = mkParser $ \update -> do
+  query <- updateInlineQuery update
+  Just query
+
 updateMessageText :: Update -> Maybe Text
 updateMessageText = extractUpdateMessage >=> messageText
 
